@@ -70,9 +70,43 @@
   .credentials { grid-template-columns: 1fr 1fr; }
 }
 
+@media (max-width: 1100px) {
+  .hero-content {
+    width: min(620px, 62vw);
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 6.4vw, 72px);
+    white-space: nowrap;
+  }
+
+  .download {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+
+  .download .button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
 @media (max-width: 560px) {
   .about { grid-template-columns: 1fr; }
   .developer-photo { width: min(100%, 310px); }
   .credentials { grid-template-columns: 1fr; }
   .developer-links { flex-direction: column; align-items: stretch; }
+
+  .hero-content { width: calc(100vw - 48px); }
+  .hero h1 {
+    font-size: 48px;
+    white-space: normal;
+  }
+
+  .download {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .download .button {
+    width: 100%;
+  }
 }
